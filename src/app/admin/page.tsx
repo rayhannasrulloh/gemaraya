@@ -46,6 +46,29 @@ export default function AdminDashboard() {
   const [mediaFiles, setMediaFiles] = useState<MediaItem[]>([]);
   const [isUploading, setIsUploading] = useState(false);
 
+// --- AUTHENTICATION CHECK ---
+  useEffect(() => {
+    checkUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  async function checkUser() {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      // Jika tidak ada sesi (belum login), tendang kembali ke halaman login
+      router.push('/login');
+    } else {
+      // Jika sudah login, baru ambil data
+      fetchPosts();
+      fetchMedia();
+    }
+  }
+
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    router.push('/login');
+  }
+
   useEffect(() => {
     fetchPosts();
     fetchMedia();
@@ -200,6 +223,17 @@ export default function AdminDashboard() {
           <div className="text-gray-500 mt-8 mb-2 text-xs uppercase tracking-wider">Public Site</div>
           <div className="text-gray-400 hover:text-white cursor-pointer transition-colors" onClick={() => router.push('/blog')}>View Blog</div>
         </nav>
+
+        {/* LOGOUT BUTTON AREA */}
+        <div className="mt-auto pt-6 border-t border-gray-800">
+          <button 
+            onClick={handleLogout}
+            className="text-gray-400 hover:text-red-500 transition-colors text-sm font-semibold flex items-center gap-2"
+          >
+            Log out
+          </button>
+        </div>
+
       </aside>
 
       {/* Main Content Area */}
