@@ -1,5 +1,6 @@
 // src/app/page.tsx
 import React from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
         <h1 className="text-2xl font-black tracking-tighter">GEMA RAYA.</h1>
         <ul className="flex gap-6 font-medium text-sm">
           <li className="hover:text-red-600 cursor-pointer transition-colors">About</li>
-          <li className="hover:text-sky-500 cursor-pointer transition-colors">Blog</li>
+          <li className="hover:text-sky-500 cursor-pointer transition-colors"><Link href="/blog">Blog</Link></li>
           <li className="hover:text-gray-500 cursor-pointer transition-colors">Contact</li>
         </ul>
       </nav>
