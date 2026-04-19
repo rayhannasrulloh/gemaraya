@@ -36,7 +36,7 @@ export default function Home() {
           {/* Left - Logo */}
           <div className="flex w-1/3">
             <Link href="/" className="text-xl font-bold tracking-tight text-black hover:text-gray-600 transition-colors px-4">
-              GEMA RAYA.
+              GEMA RAYA
             </Link>
           </div>
 
@@ -105,9 +105,7 @@ export default function Home() {
               variants={fadeInUp}
               className="text-[18px] text-[#373a46] opacity-80 max-w-[554px] font-sans"
             >
-              Gema Raya provides the tools and transparency you need to lead,
-              collaborate, and achieve more together, no matter where your team
-              is located.
+              Gema Raya adalah wadah bagi mahasiswa untuk menyalurkan aspirasi, mengembangkan potensi, dan berkontribusi bagi almamater tercinta.
             </motion.p>
 
             {/* Email Input & CTA */}
@@ -130,41 +128,151 @@ export default function Home() {
         </section>
 
         {/* Philosophy Section */}
-        <section className="bg-white py-32 px-6 border-t border-gray-100 relative z-20">
-          <motion.div
-            variants={staggerCards}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 text-center"
-          >
-            {/* Red - Leadership */}
-            <motion.div variants={fadeInUp} className="flex flex-col items-center group">
-              <div className="w-20 h-20 rounded-full bg-red-600 mb-8 shadow-2xl shadow-red-200 group-hover:scale-110 transition-transform duration-500"></div>
-              <h3 className="text-2xl font-black mb-4 tracking-tight">Leadership</h3>
-              <p className="text-gray-500 text-base leading-relaxed max-w-xs">
-                Mewakili semangat kepemimpinan yang berkobar dalam setiap mahasiswa untuk menjadi agen perubahan.
-              </p>
+        <section id="filosofi" className="bg-white py-32 px-6 relative z-20 overflow-hidden">
+          <div className="max-w-4xl mx-auto flex flex-col gap-32">
+            
+            {/* Image 1: Intro */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="min-h-[60vh] flex flex-col items-center justify-center text-center"
+            >
+              <h2 className="text-5xl md:text-6xl font-black tracking-tight text-black mb-4">yuk bedah filosofi</h2>
+              <p className="text-3xl font-instrument-serif tracking-[0.4em] mb-16 text-black">g e m a &nbsp; r a y a</p>
+              <div className="mt-20 text-sm font-medium italic text-gray-800">with <span className="font-bold not-italic">tim</span> gema raya</div>
             </motion.div>
 
-            {/* Blue - Collaboration */}
-            <motion.div variants={fadeInUp} className="flex flex-col items-center group">
-              <div className="w-20 h-20 rounded-full bg-sky-500 mb-8 shadow-2xl shadow-sky-200 group-hover:scale-110 transition-transform duration-500"></div>
-              <h3 className="text-2xl font-black mb-4 tracking-tight">Collaboration</h3>
-              <p className="text-gray-500 text-base leading-relaxed max-w-xs">
-                Melambangkan kolaborasi, kemampuan mahasiswa untuk bekerja sama dalam kegiatan belajar dan proyek sosial.
-              </p>
+            {/* Image 2: Base on shape 1 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="grid md:grid-cols-2 gap-16 items-center"
+            >
+              <div>
+                <h3 className="text-lg tracking-[0.3em] text-gray-800 font-medium mb-1 uppercase">Filosofi Logo</h3>
+                <h2 className="text-3xl font-extrabold mb-12">base on shape</h2>
+                
+                <div className="mb-12">
+                  <div className="flex items-start gap-6">
+                    <div className="mt-1 w-12 flex-shrink-0 flex items-start justify-center">
+                      {/* Segitiga Terbalik */}
+                      <svg viewBox="0 0 24 24" fill="black" className="w-10 h-10"><polygon points="24 4 0 4 12 20"/></svg>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">Segitiga Terbalik:</h4>
+                      <p className="text-gray-800 leading-relaxed font-sans text-base">segitiga terbalik diartikan sebagai simbol pengetahuan yang mengalir dari atas ke bawah, mencerminkan sikap rendah hati dan keinginan untuk terus belajar tanpa henti. tiga sudut nya mencerminkan tri sukses generus.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-start gap-6">
+                    <div className="mt-1 w-12 flex-shrink-0 flex items-start justify-center">
+                      {/* Heart */}
+                      <svg viewBox="0 0 24 24" fill="black" className="w-10 h-10"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">Bentuk Love:</h4>
+                      <p className="text-gray-800 leading-relaxed font-sans text-base">Mahasiswa diharapkan tidak hanya mengejar kesuksesan pribadi, tetapi juga membawa dampak positif bagi masyarakat (social impact).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-center md:justify-end">
+                <img src="/logo-gema-raya.png" alt="Logo Shape" className="w-64 max-w-full drop-shadow-2xl" />
+              </div>
             </motion.div>
 
-            {/* Black - Integrity */}
-            <motion.div variants={fadeInUp} className="flex flex-col items-center group">
-              <div className="w-20 h-20 rounded-full bg-black mb-8 shadow-2xl shadow-gray-300 group-hover:scale-110 transition-transform duration-500"></div>
-              <h3 className="text-2xl font-black mb-4 tracking-tight">Integrity</h3>
-              <p className="text-gray-500 text-base leading-relaxed max-w-xs">
-                Mewakili dasar yang kokoh dalam integritas dan komitmen, sikap yang bertanggung jawab dan tangguh.
-              </p>
+            {/* Image 3: Base on shape 2 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="grid md:grid-cols-2 gap-16 items-center"
+            >
+              <div className="order-2 md:order-1 flex justify-center md:justify-start">
+                <img src="/logo-gema-raya.png" alt="Logo Structure" className="w-64 max-w-full drop-shadow-2xl" />
+              </div>
+              <div className="order-1 md:order-2">
+                <h3 className="text-lg tracking-[0.3em] text-gray-800 font-medium mb-1 uppercase md:text-right">Filosofi Logo</h3>
+                <h2 className="text-3xl font-extrabold mb-12 md:text-right">base on shape</h2>
+                
+                <div className="mb-12">
+                  <div className="flex items-start gap-6">
+                    <div className="mt-1 w-12 flex-shrink-0 flex items-start justify-center">
+                      <div className="w-8 h-8 bg-black mt-1"></div>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">Persegi:</h4>
+                      <p className="text-gray-800 leading-relaxed font-sans text-base">segi empat yang kokoh merepresentasikan kemandirian mahasiswa. Selain itu, struktur yang kokoh melambangkan tanggung jawab dan kedisiplinan dalam menjalani kehidupan baik perkuliahan dan mengajinya. 4 sudutnya juga menjadi representasi 4 roda berputar</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-start gap-6">
+                    <div className="mt-1 w-12 flex-shrink-0 flex items-start justify-center">
+                      {/* Graduation Cap */}
+                      <svg viewBox="0 0 24 24" fill="black" className="w-10 h-10"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z"/></svg>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">Tiga Segitiga:</h4>
+                      <p className="text-gray-800 leading-relaxed font-sans text-base">diartikan sebagai tiga pilar perguruan tinggi: pendidikan dan pengajaran, penelitian dan pengembangan, dan pengabdian kepada masyarakat. Semua aspek ini berdiri berdampingan dan saling menguatkan.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
-          </motion.div>
+
+            {/* Image 4: Base on designation */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col items-center mt-12"
+            >
+              <h3 className="text-lg tracking-[0.3em] text-gray-800 font-medium mb-1 uppercase">Filosofi</h3>
+              <h2 className="text-3xl font-extrabold mb-16">Base on designation</h2>
+              
+              <img src="/logo-gema-raya.png" alt="Gema Raya Logo" className="h-32 mb-16" />
+              
+              <div className="text-left space-y-6 text-lg text-gray-900 leading-relaxed max-w-2xl font-medium">
+                <p>"gema" sebagai <span className="font-bold text-black">Refleksi Suara</span> juga mencerminkan tujuan untuk <span className="font-bold text-black">menggema-kan nilai-nilai 29 karakter luhur generus LDII</span> dan menyebarkan kebaikan di lingkungan kampus, seperti gema suara yang terus meluas dan berdampak.</p>
+                <p>Penggunaan huruf kecil melambangkan <span className="font-bold text-black">kerendahan hati dan kesederhanaan</span>, mengingatkan bahwa komunitas ini berfungsi sebagai <span className="font-bold text-black">wadah yang inklusif dan terbuka</span> untuk semua mahasiswa tanpa melihat tingkatan.</p>
+                <p>Dalam konteks mahasiswa, "<span className="font-bold text-black">Raya</span>" menginspirasi agar mereka <span className="font-bold text-black">berani bermimpi besar</span> dan <span className="font-bold text-black">berkontribusi maksimal</span> di berbagai bidang.</p>
+              </div>
+            </motion.div>
+
+            {/* Image 5: Base on Tag-line */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col items-center mt-12 mb-32"
+            >
+              <h3 className="text-lg tracking-[0.3em] text-gray-800 font-medium mb-1 uppercase">Filosofi</h3>
+              <h2 className="text-3xl font-extrabold mb-16">Base on Tag-line</h2>
+              
+              <img src="/logo-gema-raya.png" alt="Gema Raya Logo Outline" className="h-32 mb-16 opacity-40 grayscale" />
+              
+              <h3 className="text-2xl md:text-3xl font-extrabold mb-16 text-center tracking-tight">
+                <span className="text-red-600">"Dekatkan Hati</span>, <span className="text-sky-500">Kuatkan Prestasi"</span>
+              </h3>
+              
+              <div className="text-left space-y-8 text-lg text-gray-900 leading-relaxed max-w-3xl font-medium">
+                <p><span className="font-bold text-red-600">Frasa pertama,</span> "Dekatkan Hati," mengandung dua unsur kedekatan yaitu pertama secara vertikal yaitu <span className="font-bold text-black">mendekatkan diri kepada Allah SWT.</span> Dan yang kedua secara horizontal yaitu mempererat hubungan dan <span className="font-bold text-black">meningkatkan kualitas ikatan sesama mahasiswa.</span></p>
+                <p><span className="font-bold text-sky-500">Frasa kedua,</span> "Kuatkan Prestasi," mengandung ajakan untuk mencapai prestasi dan kontribusi positif. Prestasi di sini tidak hanya berarti nilai akademik, tetapi juga prestasi dalam pengembangan diri, karakter, dan kontribusi sosial.</p>
+              </div>
+            </motion.div>
+
+          </div>
         </section>
       </main>
 
