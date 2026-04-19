@@ -25,25 +25,37 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black font-sans selection:bg-red-600 selection:text-white flex flex-col">
       <main className="flex-grow">
-        
+
         {/* Navbar Section */}
-        <motion.nav 
+        <motion.header 
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="flex items-center justify-between p-6 lg:px-12 max-w-7xl mx-auto h-24 relative z-50"
+          transition={{ duration: 0.6, ease: 'easeOut' as const }}
+          className="absolute top-6 left-0 right-0 z-50 flex items-center justify-between px-3 py-3 md:px-6 md:py-4 mx-auto max-w-6xl w-[calc(100%-3rem)] bg-white/40 backdrop-blur-2xl border border-white/50 rounded-[40px] shadow-[0px_4px_30px_rgba(0,0,0,0.05)]"
         >
-          <Link href="/" className="text-2xl font-black tracking-tighter hover:text-red-600 transition-colors">
+          {/* Left - Logo */}
+          <div className="flex w-1/3">
+            <Link href="/" className="text-xl font-bold tracking-tight text-black hover:text-gray-600 transition-colors px-4">
               GEMA RAYA.
-          </Link>
-          <ul className="flex gap-8 font-semibold text-sm items-center">
-            <li><Link href="/blog" className="hover:text-sky-500 transition-colors">Blog</Link></li>
-            <li><Link href="/login" className="px-5 py-2.5 bg-black text-white hover:bg-gray-800 rounded-full transition-colors">Admin</Link></li>
+            </Link>
+          </div>
+
+          {/* Center - Links */}
+          <ul className="hidden md:flex w-1/3 justify-center gap-8 font-medium text-sm items-center text-gray-800">
+            <li><Link href="/" className="hover:text-black transition-colors">Beranda</Link></li>
+            <li><Link href="#tentang" className="hover:text-black transition-colors">Tentang</Link></li>
+            <li><Link href="#filosofi" className="hover:text-black transition-colors">Filosofi</Link></li>
+            <li><Link href="#galeri" className="hover:text-black transition-colors">Galeri</Link></li>
           </ul>
-        </motion.nav>
+
+          {/* Right - Button */}
+          <div className="flex w-1/3 justify-end pr-2 md:pr-0">
+            <Link href="/blog" className="px-6 py-2.5 bg-black text-white hover:bg-gray-800 rounded-full text-sm font-medium transition-colors shadow-[inset_0px_1px_4px_rgba(255,255,255,0.2)]">Blog</Link>
+          </div>
+        </motion.header>
 
         {/* NEW HERO SECTION */}
-        <section className="relative flex flex-col items-center min-h-screen overflow-hidden">
+        <section className="relative z-0 flex flex-col items-center min-h-screen overflow-hidden">
           {/* --- VIDEO BACKGROUND --- */}
           <div className="absolute inset-0 -z-20 w-full h-full">
             <video
@@ -54,7 +66,7 @@ export default function Home() {
               className="w-full h-full object-cover [transform:scaleY(-1)]"
             >
               <source
-                src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260302_085640_276ea93b-d7da-4418-a09b-2aa5b490e838.mp4"
+                src="/hf_20260302_085640_276ea93b-d7da-4418-a09b-2aa5b490e838.mp4"
                 type="video/mp4"
               />
             </video>
@@ -83,7 +95,9 @@ export default function Home() {
               variants={fadeInUp}
               className="text-[48px] md:text-[64px] lg:text-[80px] font-medium tracking-[-0.04em] text-black leading-[1.1] max-w-[900px]"
             >
-              Simple <span className="font-instrument-serif italic text-[60px] md:text-[80px] lg:text-[100px] font-normal tracking-normal">management</span> for your remote team
+              Dekatkan <span className="font-instrument-serif italic text-[60px] md:text-[80px] lg:text-[100px] font-normal tracking-normal">hati</span>,
+              <br />
+              kuatkan <span className="font-instrument-serif italic text-[60px] md:text-[80px] lg:text-[100px] font-normal tracking-normal">prestasi</span>
             </motion.h1>
 
             {/* Description */}
@@ -92,7 +106,7 @@ export default function Home() {
               className="text-[18px] text-[#373a46] opacity-80 max-w-[554px] font-sans"
             >
               Gema Raya provides the tools and transparency you need to lead,
-              collaborate, and achieve more together—no matter where your team
+              collaborate, and achieve more together, no matter where your team
               is located.
             </motion.p>
 
@@ -111,25 +125,13 @@ export default function Home() {
                   Create Free Account
                 </button>
               </div>
-
-              {/* Social Proof */}
-              <div className="flex items-center gap-3 text-sm font-medium text-gray-500">
-                <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-[10px]">✨</div>
-                  <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-white flex items-center justify-center text-[10px]">🌟</div>
-                  <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-white flex items-center justify-center text-[10px]">💫</div>
-                </div>
-                <div>
-                  <span className="text-black font-semibold">1,020+ Reviews</span> from remote teams
-                </div>
-              </div>
             </motion.div>
           </motion.div>
         </section>
 
         {/* Philosophy Section */}
         <section className="bg-white py-32 px-6 border-t border-gray-100 relative z-20">
-          <motion.div 
+          <motion.div
             variants={staggerCards}
             initial="hidden"
             whileInView="visible"
