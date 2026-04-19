@@ -108,21 +108,27 @@ export default function Home() {
               Gema Raya adalah wadah bagi mahasiswa untuk menyalurkan aspirasi, mengembangkan potensi, dan berkontribusi bagi almamater tercinta.
             </motion.p>
 
-            {/* Email Input & CTA */}
+            {/* CTA Lanjut Bawah */}
             <motion.div
               variants={fadeInUp}
-              className="mt-4 flex flex-col items-center gap-6"
+              className="mt-8 flex flex-col items-center gap-6"
             >
-              <div className="flex items-center bg-[#fcfcfc] border border-black/5 shadow-[0px_10px_40px_5px_rgba(194,194,194,0.25)] rounded-[40px] p-2 pl-6 w-full max-w-[500px] sm:w-[500px]">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="bg-transparent outline-none flex-grow text-[#373a46] placeholder-gray-400 font-sans w-full"
-                />
-                <button className="whitespace-nowrap px-6 py-3.5 bg-gradient-to-b from-[#2a2a2a] to-[#111111] text-white rounded-full font-medium text-sm transition-transform hover:scale-105 shadow-[inset_-4px_-6px_25px_0px_rgba(201,201,201,0.08),inset_4px_4px_10px_0px_rgba(29,29,29,0.24)]">
-                  Create Free Account
-                </button>
-              </div>
+              <button 
+                onClick={() => {
+                  const lenis = (window as any).lenis;
+                  if (lenis) {
+                    lenis.scrollTo('#filosofi', { offset: -50 });
+                  } else {
+                    document.getElementById('filosofi')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="group flex items-center justify-center gap-3 px-8 py-3.5 bg-gradient-to-b from-[#2a2a2a] to-[#111111] text-white rounded-full font-medium text-sm transition-transform hover:scale-105 shadow-[inset_-4px_-6px_25px_0px_rgba(201,201,201,0.08),inset_4px_4px_10px_0px_rgba(29,29,29,0.24)]"
+              >
+                Lanjut ke bawah
+                <svg className="w-4 h-4 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </button>
             </motion.div>
           </motion.div>
         </section>

@@ -17,6 +17,9 @@ export default function SmoothScroll() {
       infinite: false,
     });
 
+    // Expose lenis instance to window for global programmatic scrolling
+    (window as any).lenis = lenis;
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
